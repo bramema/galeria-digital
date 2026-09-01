@@ -1,82 +1,80 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Álbum Digital❤️</title>
-  
-  <!-- Estilos CSS -->
-  <link rel="stylesheet" href="CSS/style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Álbum Digital❤️</title>
+<!-- Estilos CSS -->
+<link rel="stylesheet" href="CSS/style.css">
 
-  <!-- Librería para comprimir imágenes antes de subir -->
-  <script src="https://cdn.jsdelivr.net/npm/browser-image-compression@2.0.2/dist/browser-image-compression.js"></script>
-  
-  <!-- SDK de Supabase -->
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<!-- Librería para comprimir imágenes antes de subir -->
+<script src="https://cdn.jsdelivr.net/npm/browser-image-compression@2.0.2/dist/browser-image-compression.js"></script>
+<!-- SDK de Supabase -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
 <body>
 
-  <header>
-    <h1>🎉 Álbum Digital 🎉</h1>
-    <p>Sube tu foto y dedícale un lindo mensaje</p>
-  </header>
+<header>
+<h1>🎉 Álbum Digital 🎉</h1>
+<p>Sube tu foto y dedícale un lindo mensaje</p>
+</header>
 
-  <main class="main-wrapper">
-    <!-- Marcos de fotos decorativos alrededor del contenedor -->
-    <aside class="floating-photo frame-top-left">
-      <div class="photo-frame">
-        <img src="https://picsum.photos/id/1018/200/200" alt="Recuerdo decorativo 1">
-      </div>
-    </aside>
+<main class="main-wrapper">
+<!-- Marcos de fotos decorativos alrededor del contenedor -->
+<aside class="floating-photo frame-top-left">
+<div class="photo-frame">
+<img src="https://picsum.photos/id/1018/200/200" alt="Recuerdo decorativo 1">
+</div>
+</aside>
 
-    <aside class="floating-photo frame-top-right">
-      <div class="photo-frame">
-        <img src="https://picsum.photos/id/1025/200/200" alt="Recuerdo decorativo 2">
-      </div>
-    </aside>
+<aside class="floating-photo frame-top-right">
+<div class="photo-frame">
+<img src="https://picsum.photos/id/1025/200/200" alt="Recuerdo decorativo 2">
+</div>
+</aside>
 
-    <aside class="floating-photo frame-bottom-left">
-      <div class="photo-frame">
-        <img src="https://picsum.photos/id/1062/200/200" alt="Recuerdo decorativo 3">
-      </div>
-    </aside>
+<aside class="floating-photo frame-bottom-left">
+<div class="photo-frame">
+<img src="https://picsum.photos/id/1062/200/200" alt="Recuerdo decorativo 3">
+</div>
+</aside>
 
-    <aside class="floating-photo frame-bottom-right">
-      <div class="photo-frame">
-        <img src="https://picsum.photos/id/1069/200/200" alt="Recuerdo decorativo 4">
-      </div>
-    </aside>
+<aside class="floating-photo frame-bottom-right">
+<div class="photo-frame">
+<img src="https://picsum.photos/id/1069/200/200" alt="Recuerdo decorativo 4">
+</div>
+</aside>
 
-    <!-- Contenedor Principal (Formulario) -->
-    <div class="container">
-      <section class="upload-card">
-        <h2>Subir Foto al Álbum</h2>
+<!-- Contenedor Principal (Formulario) -->
+<div class="container">
+<section class="upload-card">
+<h2>Subir Foto al Álbum</h2>
 
-        <div class="form-group">
-          <label for="author">Tu Nombre o Parentesco:</label>
-          <input type="text" id="author" placeholder="Ej. Tía María / Mamá / Tu Primo Juan">
-        </div>
+<div class="form-group">
+<label for="author">Tu Nombre o Parentesco:</label>
+<input type="text" id="author" placeholder="Ej. Tía María / Mamá / Tu Primo Juan">
+</div>
 
-        <div class="form-group">
-          <label for="message">Mensaje o Dedicatoria:</label>
-          <textarea id="message" rows="3" placeholder="¡Feliz cumpleaños! Te queremos mucho..."></textarea>
-        </div>
+<div class="form-group">
+<label for="message">Mensaje o Dedicatoria:</label>
+<textarea id="message" rows="3" placeholder="¡Feliz cumpleaños! Te queremos mucho..."></textarea>
+</div>
 
-        <div class="form-group">
-          <label for="fileInput">Selecciona la Foto:</label>
-          <input type="file" id="fileInput" accept="image/*">
-        </div>
+<div class="form-group">
+<label for="fileInput">Selecciona la Foto:</label>
+<input type="file" id="fileInput" accept="image/*">
+</div>
 
-        <button id="uploadBtn" onclick="uploadPhoto()">Subir al Álbum</button>
-        <div id="statusMessage"></div>
+<button id="uploadBtn" onclick="uploadPhoto()">Subir al Álbum</button>
+<div id="statusMessage"></div>
 
-        <div class="nav-container">
-          <a href="html/FOTOS.html" class="btn-secondary">📸 Ver Galería de Fotos</a>
-        </div>
-      </section>
-    </div>
-  </main>
+<div class="nav-container">
+<a href="html/FOTOS.html" class="btn-secondary">📸 Ver Galería de Fotos</a>
+</div>
+</section>
+</div>
+</main>
 
-  <script src="JS/script.js"></script>
+<script src="JS/script.js"></script>
 </body>
 </html>
