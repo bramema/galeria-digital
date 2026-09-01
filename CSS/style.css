@@ -1,0 +1,372 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&display=swap');
+
+:root {
+  --primary: #e63956;
+  --primary-hover: #cf2e4a;
+  --primary-light: #fce7f3;
+  --bg: #fdf2f8;
+  --card-bg: #ffffff;
+  --text-main: #1f2937;
+  --text-muted: #6b7280;
+  --border-color: #fbcfe8;
+  --border-focus: #f43f5e;
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 12px -2px rgba(230, 57, 86, 0.08), 0 2px 6px -1px rgba(0, 0, 0, 0.04);
+  --shadow-hover: 0 12px 24px -4px rgba(230, 57, 86, 0.15), 0 4px 8px -2px rgba(0, 0, 0, 0.04);
+  --radius-lg: 16px;
+  --radius-md: 10px;
+  --radius-sm: 6px;
+  --transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Dancing Script', cursive, sans-serif;
+  background-color: var(--bg);
+  color: var(--text-main);
+  margin: 0;
+  padding: 40px 20px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Encabezado */
+header {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto 40px auto;
+}
+
+header h1 {
+  font-family: 'Dancing Script', cursive, sans-serif;
+  color: #9d174d;
+  font-size: 3rem;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  margin: 0 0 10px 0;
+}
+
+header p {
+  color: #831843;
+  font-size: 1.3rem;
+  margin: 0;
+  font-weight: 600;
+}
+
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+/* Card del Formulario */
+.upload-card {
+  background: var(--card-bg);
+  max-width: 480px;
+  margin: 0 auto 48px auto;
+  padding: 36px;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-md);
+  transition: var(--transition);
+}
+
+.upload-card:hover {
+  box-shadow: var(--shadow-hover);
+}
+
+.upload-card h2 {
+  font-family: 'Dancing Script', cursive, sans-serif;
+  color: var(--text-main);
+  margin: 0 0 24px 0;
+  font-size: 1.8rem;
+  font-weight: 700;
+  text-align: center;
+  letter-spacing: -0.01em;
+}
+
+/* Campos de Formulario */
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: var(--text-main);
+}
+
+.form-group input[type="text"], 
+.form-group textarea {
+  width: 100%;
+  padding: 12px 14px;
+  background-color: #fff1f2;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  font-family: 'Dancing Script', cursive, sans-serif;
+  font-size: 1.2rem;
+  color: var(--text-main);
+  transition: var(--transition);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 90px;
+}
+
+.form-group input[type="text"]:focus, 
+.form-group textarea:focus {
+  outline: none;
+  background-color: #ffffff;
+  border-color: var(--border-focus);
+  box-shadow: 0 0 0 4px rgba(244, 63, 94, 0.15);
+}
+
+/* Custom File Input */
+.form-group input[type="file"] {
+  width: 100%;
+  font-family: 'Dancing Script', cursive, sans-serif;
+  font-size: 1.1rem;
+  color: var(--text-muted);
+}
+
+.form-group input[type="file"]::file-selector-button {
+  background-color: var(--primary-light);
+  color: var(--primary);
+  border: 1px solid rgba(230, 57, 86, 0.2);
+  padding: 8px 16px;
+  border-radius: var(--radius-sm);
+  font-weight: 700;
+  cursor: pointer;
+  margin-right: 12px;
+  transition: var(--transition);
+  font-family: 'Dancing Script', cursive, sans-serif;
+}
+
+.form-group input[type="file"]::file-selector-button:hover {
+  background-color: var(--primary);
+  color: #ffffff;
+}
+
+/* Botones */
+button {
+  background-color: var(--primary);
+  color: #ffffff;
+  border: none;
+  padding: 13px 24px;
+  border-radius: var(--radius-md);
+  font-weight: 700;
+  font-size: 1.2rem;
+  cursor: pointer;
+  width: 100%;
+  letter-spacing: 0.01em;
+  box-shadow: 0 2px 4px rgba(230, 57, 86, 0.2);
+  transition: var(--transition);
+  font-family: 'Dancing Script', cursive, sans-serif;
+}
+
+button:hover {
+  background-color: var(--primary-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(230, 57, 86, 0.3);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+button:disabled {
+  background-color: #d1d5db;
+  box-shadow: none;
+  cursor: not-allowed;
+  transform: none;
+}
+
+#statusMessage {
+  margin-top: 16px;
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.nav-container {
+  margin-top: 24px;
+  text-align: center;
+  border-top: 1px solid #fce7f3;
+  padding-top: 20px;
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background-color: #ffffff;
+  color: var(--primary);
+  border: 1px solid var(--border-color);
+  padding: 10px 20px;
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.1rem;
+  transition: var(--transition);
+  font-family: 'Dancing Script', cursive, sans-serif;
+}
+
+.btn-secondary:hover {
+  border-color: var(--primary);
+  color: #ffffff;
+  background-color: var(--primary);
+}
+
+.btn-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 12px;
+  color: var(--text-muted);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: var(--transition);
+  font-family: 'Dancing Script', cursive, sans-serif;
+}
+
+.btn-back:hover {
+  color: var(--primary);
+}
+
+/* Wrapper principal con posicionamiento para los marcos */
+.main-wrapper {
+  position: relative;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+/* Estilo general de los marcos (Efecto Polaroid Elegante) */
+.floating-photo {
+  position: absolute;
+  z-index: 10;
+  pointer-events: none;
+  transition: transform 0.3s ease;
+}
+
+.photo-frame {
+  background: #ffffff;
+  padding: 14px 14px 32px 14px;
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 12px 30px -5px rgba(230, 57, 86, 0.18), 0 8px 12px -6px rgba(0, 0, 0, 0.05);
+}
+
+.photo-frame img {
+  width: 170px;
+  height: 170px;
+  object-fit: cover;
+  border-radius: 6px;
+  display: block;
+}
+
+/* Posiciones e inclinaciones para las fotos flotantes */
+.frame-top-left {
+  top: -20px;
+  left: -40px;
+  transform: rotate(-8deg);
+}
+
+.frame-top-right {
+  top: -10px;
+  right: -40px;
+  transform: rotate(6deg);
+}
+
+.frame-bottom-left {
+  bottom: 0px;
+  left: -30px;
+  transform: rotate(5deg);
+}
+
+.frame-bottom-right {
+  bottom: 10px;
+  right: -30px;
+  transform: rotate(-7deg);
+}
+
+@media (max-width: 1100px) {
+  .floating-photo {
+    display: none;
+  }
+}
+
+/* Sección de Galería */
+.gallery-section h2 {
+  font-family: 'Dancing Script', cursive, sans-serif;
+  text-align: center;
+  color: var(--text-main);
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  margin-bottom: 32px;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 28px;
+}
+
+.photo-card {
+  background: var(--card-bg);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-color);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  transition: var(--transition);
+}
+
+.photo-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-hover);
+}
+
+.photo-card img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  border-bottom: 1px solid #fce7f3;
+}
+
+.photo-info {
+  padding: 20px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.photo-info .message {
+  font-family: 'Dancing Script', cursive, sans-serif;
+  font-style: normal;
+  color: var(--text-main);
+  font-size: 1.25rem;
+  line-height: 1.5;
+  margin: 0 0 16px 0;
+}
+
+.photo-info .author {
+  font-family: 'Dancing Script', cursive, sans-serif;
+  font-weight: 700;
+  color: var(--primary);
+  text-align: right;
+  font-size: 1.1rem;
+  margin: 0;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
