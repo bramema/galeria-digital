@@ -68,8 +68,8 @@ async function uploadPhoto() {
 
     // Redirección corregida a la carpeta html
     setTimeout(() => {
-      window.location.href = "html/fotos.html";
-    }, 1500);
+        window.location.href = "html/FOTOS.html";
+      }, 1500);
 
   } catch (err) {
     console.error("Error en el proceso:", err);
