@@ -1,4 +1,4 @@
-// 1. Configuración de credenciales
+// Credenciales de Supabase
 const SUPABASE_URL = 'https://rkoplrwxqkhkkmfqkvev.supabase.co';
 const SUPABASE_KEY = 'sb_publishable_r8YxKSCQo7L-LFIu-ck6lw_baWB5CY4';
 
@@ -8,35 +8,43 @@ async function cargarFotos() {
   const container = document.getElementById('galleryContainer') || document.querySelector('.gallery');
 
   try {
-    // Consulta a la tabla 'fotos1'
+    // Consulta exacta a la tabla 'fotos1'
     const { data: fotos, error } = await supabaseClient
       .from('fotos1')
       .select('*')
       .order('created_at', { ascending: false });
 
-    if (error) throw error;
+    if (error) {
+      console.error("Error devuelto por Supabase:", error);
+      throw error;
+    }
 
     if (!fotos || fotos.length === 0) {
-      container.innerHTML = '<p style="text-align:center;">Aún no hay fotos en el álbum. ¡Sé el primero en subir una!</p>';
+      if (container) {
+        container.innerHTML = '<p style="text-align:center;">Aún no hay fotos en el álbum.</p>';
+      }
       return;
     }
 
-    // Renderizar tarjetas de fotos
-    container.innerHTML = fotos.map(foto => `
-      <div class="photo-card">
-        <img src="${foto.image_url}" alt="Foto de ${foto.author || 'Anónimo'}">
-        <div class="photo-info">
-          <p class="message">"${foto.message || ''}"</p>
-          <p class="author">- ${foto.author || 'Anónimo'}</p>
+    // Mapeo usando los nombres exactos de columnas
+    if (container) {
+      container.innerHTML = fotos.map(foto => `
+        <div class="photo-card">
+          <img src="${foto.image_url}" alt="Foto de ${foto.author || 'Anónimo'}">
+          <div class="photo-info">
+            <p class="message">"${foto.message || ''}"</p>
+            <p class="author">- ${foto.author || 'Anónimo'}</p>
+          </div>
         </div>
-      </div>
-    `).join('');
+      `).join('');
+    }
 
   } catch (err) {
-    console.error("Error al consultar Supabase:", err);
-    document.getElementById('statusMessage')?.innerText || (container.innerHTML = '<p>Error al cargar las fotos.</p>');
+    console.error("Detalle del error al cargar:", err);
+    if (container) {
+      container.innerHTML = `<p style="color:red; text-align:center;">Error al cargar las fotos: ${err.message || 'Error desconocido'}</p>`;
+    }
   }
 }
 
-// Ejecutar al cargar la página
 document.addEventListener('DOMContentLoaded', cargarFotos);
